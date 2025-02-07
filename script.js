@@ -4,7 +4,6 @@ document.getElementById('enableAudio').addEventListener('click', function() {
     this.style.display = 'none'; // Sembunyikan tombol setelah diklik
 });
 
-
 // Event untuk tombol kejutan
 document.getElementById('surpriseButton').addEventListener('click', function() {
     const surpriseMessage = document.getElementById('surpriseMessage');
