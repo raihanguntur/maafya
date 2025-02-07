@@ -1,12 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.getElementById('enableAudio').addEventListener('click', function() {
     const surpriseAudio = document.getElementById('surpriseAudio');
-
-    if (surpriseAudio) {
-        surpriseAudio.muted = true; // Mulai dalam keadaan mute
-        surpriseAudio.play().then(() => {
-            surpriseAudio.muted = false; // Unmute setelah berhasil diputar
-        }).catch(error => console.log("Pemutaran audio diblokir oleh browser:", error));
-    }
+    surpriseAudio.play().catch(error => console.log("Pemutaran audio diblokir:", error));
+    this.style.display = 'none'; // Sembunyikan tombol setelah diklik
 });
 
 
