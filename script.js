@@ -1,13 +1,14 @@
-// Memutar audio saat halaman dimuat
 document.addEventListener("DOMContentLoaded", function () {
     const surpriseAudio = document.getElementById('surpriseAudio');
 
     if (surpriseAudio) {
-        surpriseAudio.play().catch(error => {
-            console.log("Pemutaran audio diblokir oleh browser:", error);
-        });
+        surpriseAudio.muted = true; // Mulai dalam keadaan mute
+        surpriseAudio.play().then(() => {
+            surpriseAudio.muted = false; // Unmute setelah berhasil diputar
+        }).catch(error => console.log("Pemutaran audio diblokir oleh browser:", error));
     }
 });
+
 
 // Event untuk tombol kejutan
 document.getElementById('surpriseButton').addEventListener('click', function() {
